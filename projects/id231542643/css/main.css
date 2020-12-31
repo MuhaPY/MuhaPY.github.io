@@ -2329,14 +2329,31 @@ body.mobile-nav-active #mobile-nav-toggle {
     height: 100%;
     transition: 0.5s ease;
     backface-visibility: hidden; }
+
   .single-work .middle {
     transition: 0.5s ease;
     position: absolute;
     bottom: 0;
     left: 0;
-    min-width: 290px;
+    min-width: 100%;
     background: rgba(255, 255, 255, 0.8);
-    padding: 35px 30px; }
+    padding: 35px 30px; } 
+  .single-work .align-right .middle {
+    right: 0;
+    left: auto;
+    text-align: right;
+    min-width: 0px;}
+  .single-work .align-left .middle {
+    min-width: 0px;}
+    @media (min-width: 900px) {
+      .single-work .align-right .middle {
+        min-width: 240px;
+      }
+      .single-work .align-left .middle {
+        min-width: 240px;
+      }
+    }
+
     .single-work .middle h4 {
       font-size: 15px;
       color: #777777;
@@ -3352,6 +3369,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   .social-widget {
     margin-top: 30px; } }
 .footer-text {
+  font-size: 18px;
   padding-top: 20px;
   margin-bottom: 0px; }
   .footer-text a,

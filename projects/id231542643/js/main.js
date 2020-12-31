@@ -1,6 +1,27 @@
 $(document).ready(function() {
   "use strict";
 
+  $("a").on('click', function(event) {
+
+    // Убедись в этом что .hash имеет значение перед переопределением поведения по умолчанию
+    if (this.hash !== "") {
+      // Запретить поведение щелчка якоря по умолчанию
+      event.preventDefault();
+  
+      // Хранить хэш
+      var hash = this.hash;
+  
+      // Использование метода animate() jQuery для добавления плавной прокрутки страницы
+      // Необязательное число (800) указывает количество миллисекунд, необходимых для прокрутки до указанной области
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+  
+       
+      });
+    } // Конец, если
+  });
+
   var window_width = $(window).width(),
     window_height = window.innerHeight,
     header_height = $(".default-header").height(),
